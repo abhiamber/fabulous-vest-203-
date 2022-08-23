@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>JS201</H1>
+    <div id="image"></div>
+</body>
+</html>
+<script >
+
+
+// fetch(`https://www.googleapis.com/books/v1/volumes?q=search-terms&key=your-API-key)
+
+getdata() 
+
+  async function getdata(){
+    // let key=AIzaSyC3DRCn-C2vMnfDnNaHafyYicFhyn5cHEM
+    let key='AIzaSyBRu9qJOKSMrfuGe1kObHIPRhMH7plZ1EA'
+    let search='harry'
+    let res= await fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${key}`)
+    try{
+        let data=await res.json()
+        data=data.items
+
+        // console.log(data)
+
+        // for(let i=0;i<3;i++){
+        //     console.log(data.accessInfo)
+        // }
+
+        // data=data[volumeInfo]
+        // console.log(data)
+
+       
+
+
+        append(data)
+
+    }
+    catch(err){
+        console.log(err)
+    }
+
+}
+
+function append(data){
+    document.getElementById("image").innerHTML=null
+console.log(data)
+    data.map(function(el){
+        let div=document.createElement("div")
+        let img=document.createElement("img")
+        img.src=el.volumeInfo.imageLinks.thumbnail
+        let p1=document.createElement("p")
+        p1.innerText=el.volumeInfo.title
+        let p2=document.createElement("p")
+        if(el.volumeInfo.averageRating==undefined){
+            el.volumeInfo.averageRating=4.1
+        }
+        p2.innerText=`Avg Rating ${el.volumeInfo.averageRating}`
+        let p3=document.createElement("p")
+    //    let x= getRandomArbitrary(500,1500   )
+    let x=Math.random()*(1500-500) +500
+       p3.innerText=`Price ${Math.floor(x)}`
+
+       let btn1=document.createElement("button")
+       let btn2=document.createElement("button")
+       btn1.innerText="View Now"
+       btn2.innerText="More details"
+       btn1.addEventListener("click",function(){
+        detailsAtNewPage(el)
+       })
+
+       btn2.addEventListener("click",function(){
+        detailsAtNewPage(el)
+       })
+
+
+
+
+        div.append(img,p1,p2,p3,btn1,btn2)
+
+        div.addEventListener("click",function(){
+        detailsAtNewPage(el)
+       })
+        document.getElementById("image").append(div)
+
+
+    })
+}
+
+
+function detailsAtNewPage(data){
+
+    localStorage.setItem("bookData",JSON.stringify(data))
+    window.location.href="bookdata.html"
+
+}
+
+
+
+
+</script>
