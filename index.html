@@ -1,107 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <H1>JS201</H1>
-    <div id="image"></div>
-</body>
-</html>
-<script >
-
-
-// fetch(`https://www.googleapis.com/books/v1/volumes?q=search-terms&key=your-API-key)
-
-getdata() 
-
-  async function getdata(){
-    // let key=AIzaSyC3DRCn-C2vMnfDnNaHafyYicFhyn5cHEM
-    let key='AIzaSyBRu9qJOKSMrfuGe1kObHIPRhMH7plZ1EA'
-    let search='harry'
-    let res= await fetch(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${key}`)
-    try{
-        let data=await res.json()
-        data=data.items
-
-        // console.log(data)
-
-        // for(let i=0;i<3;i++){
-        //     console.log(data.accessInfo)
-        // }
-
-        // data=data[volumeInfo]
-        // console.log(data)
-
-       
-
-
-        append(data)
-
-    }
-    catch(err){
-        console.log(err)
-    }
-
-}
-
-function append(data){
-    document.getElementById("image").innerHTML=null
-console.log(data)
-    data.map(function(el){
-        let div=document.createElement("div")
-        let img=document.createElement("img")
-        img.src=el.volumeInfo.imageLinks.thumbnail
-        let p1=document.createElement("p")
-        p1.innerText=el.volumeInfo.title
-        let p2=document.createElement("p")
-        if(el.volumeInfo.averageRating==undefined){
-            el.volumeInfo.averageRating=4.1
+    <style>
+         #output{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px 30px;
         }
-        p2.innerText=`Avg Rating ${el.volumeInfo.averageRating}`
-        let p3=document.createElement("p")
-    //    let x= getRandomArbitrary(500,1500   )
-    let x=Math.random()*(1500-500) +500
-       p3.innerText=`Price ${Math.floor(x)}`
+        img{
+            width: 100%;
+            height: 200px;
+            
+        }
+        #output >div{
+            margin: auto;
+            height: auto;
+            /* width: 22%; */
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+            padding-bottom: 20px;     
+          }
 
-       let btn1=document.createElement("button")
-       let btn2=document.createElement("button")
-       btn1.innerText="View Now"
-       btn2.innerText="More details"
-       btn1.addEventListener("click",function(){
-        detailsAtNewPage(el)
-       })
+    </style>
+  </head>
+  <body>
+    <h1>JS201</h1>
+    <input type="text" id="input" />
+    <input type="submit" onclick="getbooks()" />
+    <div id="output"></div>
+  </body>
+</html>
+<script>
+ 
 
-       btn2.addEventListener("click",function(){
-        detailsAtNewPage(el)
-       })
+  getbooks();
 
+  async function getbooks() {
 
+    let x = Math.random() * 9;
+    x =Math.floor(x);
+    let query=document.getElementById("input").value
+    if(!query){
+        value=`Harry${x}`
+    }else{
+        value=query
+    }
 
-
-        div.append(img,p1,p2,p3,btn1,btn2)
-
-        div.addEventListener("click",function(){
-        detailsAtNewPage(el)
-       })
-        document.getElementById("image").append(div)
-
-
-    })
-}
-
-
-function detailsAtNewPage(data){
-
-    localStorage.setItem("bookData",JSON.stringify(data))
-    window.location.href="bookdata.html"
-
-}
-
-
+    let res = await fetch(`http://openlibrary.org/search.json?title=${value}`);
 
 
+    try {
+      let data = await res.json();
+      console.log(data);
+      append(data.docs);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  function append(data) {
+    document.getElementById("output").innerHTML = null;
+    console.log(data);
+    let i = 0;
+    data.map(function (el) {
+      // i++
+      console.log("vghv");
+
+      let div = document.createElement("div");
+      let img = document.createElement("img");
+
+      img.src = `http://covers.openlibrary.org/b/isbn/${el.isbn[0]}-L.jpg`;
+
+      // }
+
+      let p1 = document.createElement("p");
+      p1.innerText = el.title;
+
+      let p3 = document.createElement("p");
+      let x = Math.random() * (1500 - 500) + 500;
+      p3.innerText = `Price ${Math.floor(x)}`;
+      let p4 = document.createElement("p");
+      p4.innerText = el.author_name;
+
+      let btn1 = document.createElement("button");
+      let btn2 = document.createElement("button");
+      btn1.innerText = "View Now";
+      btn2.innerText = "More details";
+      btn1.addEventListener("click", function () {
+        detailsAtNewPage(el);
+      });
+
+      btn2.addEventListener("click", function () {
+        detailsAtNewPage(el);
+      });
+
+      div.append(img, p1, p3, p4, btn1, btn2);
+
+      img.addEventListener("click", function () {
+        detailsAtNewPage(el);
+      });
+      document.getElementById("output").append(div);
+    });
+  }
+
+  function detailsAtNewPage(data) {
+    localStorage.setItem("bookData", JSON.stringify(data));
+    window.location.href = "bookdata.html";
+  }
 </script>
