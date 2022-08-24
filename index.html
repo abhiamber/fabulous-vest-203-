@@ -59,26 +59,27 @@
 
 <script >
    
-getbooks();
+// getbooks();
 
 async function getbooks() {
 
   let x = Math.random() * 9;
-  console.log(x);
+  // console.log(x);
   x =Math.floor(x);
   let query=document.getElementById("input").value
+  // console.log(query)
   if(!query){
       value=`Harry${x}`
   }else{
       value=query
   }
 
-  let res = await fetch(`http://openlibrary.org/search.json?title=${value}`);
+  let res = await fetch(`https://openlibrary.org/search.json?title=${value}`);
 
 
   try {
     let data = await res.json();
-    console.log(data);
+    // console.log(data);
     append(data.docs);
   } catch (err) {
     console.log(err);
@@ -87,18 +88,19 @@ async function getbooks() {
 
 function append(data) {
   document.getElementById("output").innerHTML = null;
-  console.log(data);
+  // console.log(data);
   let i = 0;
   data.map(function (el) {
-    // i++
-    console.log("vghv");
-
+// console.log(i++)
     let div = document.createElement("div");
     let img = document.createElement("img");
+     if(el.isbn==null){
+      img.src='https://covers.openlibrary.org/b/isbn/9780297858065-L.jpg'
+     }else{
+      img.src = `https://covers.openlibrary.org/b/isbn/${el.isbn[0]}-L.jpg`;
 
-    img.src = `http://covers.openlibrary.org/b/isbn/${el.isbn[0]}-L.jpg`;
+     }
 
-    // }
 
     let p1 = document.createElement("p");
     p1.innerText = el.title;
@@ -122,7 +124,7 @@ function append(data) {
     btn2.addEventListener("click", function () {
       detailsAtNewPage(el);
     });
-
+     
     div.append(img, p1, p3, p4, btn1, btn2);
 
     img.addEventListener("click", function () {
@@ -138,6 +140,8 @@ function detailsAtNewPage(data) {
 }
 
 </script>
+
+<!-- ******************************importing Navbar Section -->
 <script type="module">
     import navbar from './components/navbar.js'
 let navbar_append=document.getElementById("nav_container")
