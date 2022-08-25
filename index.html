@@ -8,42 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/navbar.css">
 </head>
-<style>
-    #output{
-       display: grid;
-       grid-template-columns: repeat(4,1fr);
-       justify-content: center;
-       align-items: center;
-       text-align: center;
-       gap: 20px 30px;
-       width: 80%;
-       padding: 5px 0px;
-       
-   }
-   #output div{
-    height: 400px;
-   }
-   img{
-       width: 100%;
-       height: 150px;
-       cursor: pointer;
-   
-   }
-   #output >div{
-       margin: auto;
-       height: auto;
-       width: 90%;
-       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-       padding-bottom: 20px;     
-     }
-     #btn1,#btn2{
-       cursor: pointer;
-       margin: 5px;
-       padding: 5px ;
-     } 
-     
 
-</style>
 <body>
     <div id="nav_container"></div>
 
@@ -59,7 +24,6 @@
 
 <script >
    
-// getbooks();
 
 async function getbooks() {
 
@@ -79,6 +43,7 @@ async function getbooks() {
 
   try {
     let data = await res.json();
+    // console.log("csdcjscj ")
     // console.log(data);
     append(data.docs);
   } catch (err) {
@@ -107,7 +72,7 @@ function append(data) {
 
     let p3 = document.createElement("p");
     let x = Math.random() * (1500 - 500) + 500;
-    p3.innerText = `Price ${Math.floor(x)}`;
+    p3.innerText = `Price -${Math.floor(x)}`;
     let p4 = document.createElement("p");
     p4.innerText = el.author_name;
     
@@ -125,7 +90,7 @@ function append(data) {
       detailsAtNewPage(el);
     });
      
-    div.append(img, p1, p3, p4, btn1, btn2);
+    div.append(img, p1, p4, p3, btn1, btn2);
 
     img.addEventListener("click", function () {
       detailsAtNewPage(el);
