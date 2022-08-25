@@ -7,12 +7,11 @@ function navbar(){
             <p id="logo"><a href="./index.html">IDEAKART</a></p>
         </div>
         <div id="results">
-        <div id="search_div">
+        
         <input id="input" placeholder="Search">
-        </div>
-        <div id="btn_div">
+    
         <button id="btn" onclick="getbooks()">Search</button><br>
-        </div>
+        
         </div>
     </div>
     
