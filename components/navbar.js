@@ -4,12 +4,15 @@ function navbar(){
     <div id="search">
 
         <div id="home">
-
             <p id="logo"><a href="./index.html">IDEAKART</a></p>
         </div>
         <div id="results">
-            <input id="input" placeholder="Search">
-            <button id="btn" onclick="getbooks()">Search</button><br>
+        <div id="search_div">
+        <input id="input" placeholder="Search">
+        </div>
+        <div id="btn_div">
+        <button id="btn" onclick="getbooks()">Search</button><br>
+        </div>
         </div>
     </div>
     
@@ -22,6 +25,7 @@ function navbar(){
         <p><a href="./signup.html">Sign Up</a></p>
     </div>
 </div>
+
 
     `
 }
