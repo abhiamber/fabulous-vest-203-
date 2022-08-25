@@ -43,8 +43,7 @@ async function getbooks() {
 
   try {
     let data = await res.json();
-    // console.log("csdcjscj ")
-    // console.log(data);
+
     append(data.docs);
   } catch (err) {
     console.log(err);
