@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/signin&signup.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+
+</head>
+<body>
+    <div id="nav_container"></div>
+    <div class="container">
+        <form  class="form " id="createAccount">
+            <h1 class="form_title">Create Account</h1>
+            
+            <div class="form_input-group">
+                <input type="text" class="form_input"  autofocus placeholder="Username">
+              
+            </div>
+            <div class="form_input-group">
+                <input type="text" class="form_input"  autofocus placeholder="Email Address">
+              
+            </div>
+            <div class="form_input-group">
+                <input type="password" class="form_input "  autofocus placeholder="Password">
+               
+            </div>
+            <div class="form_input-group">
+                <input type="password" class="form_input "  autofocus placeholder=" Confirm Password">
+                
+            </div>
+            <button class="form_button" type="submit" id="butts">
+                Continue
+            </button>
+            
+            <p class="form_text">
+                <a id="linkLogin" href="#" class="form_link" >Already have an account? Sign in</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    let data=document.getElementById("butts")
+    
+    data.addEventListener("click", function (e){
+        e.preventDefault();
+        window.location.href="index.html"
+        
+        
+    })
+    let loginForm=document.getElementById("linkLogin");
+    loginForm.addEventListener("click", function (e){
+        e.preventDefault();
+        window.location.href="signin.html"
+        
+        
+    })
+    
+
+</script>
+<script type="module">
+
+    import navbar from './components/navbar.js'
+    let navbar_append=document.getElementById("nav_container")
+    navbar_append.innerHTML=navbar()
+</script>
