@@ -3,6 +3,7 @@
     margin: 0%;
     padding: 0%;
 }
+
 #navbar{
     display: flex;
     padding: 10px;
@@ -83,3 +84,67 @@
     color: yellow;
     
 }
+
+
+/*  Landin PAge css */
+
+#output{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px 30px;
+    width: 95%;
+    padding: 5px 0px;
+    margin: auto;
+    margin-top: 20px;
+    
+}
+#output div{
+ height: 400px;
+}
+img{
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}
+#output >div{
+    margin: auto;
+    height: auto;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    padding-bottom: 20px;     
+  }
+  #btn1,#btn2{
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px ;
+    background-color: grey;
+    color: whitesmoke;
+    border: 1px transparent;
+  } 
+
+  #btn1:hover,#btn2:hover{
+    color: rgb(9, 63, 243);
+    background-color: whitesmoke;
+    border: 1px solid gray;
+    text-decoration: underline;
+  }
+  #output >div>p:nth-child(4){
+    margin: 5px;
+    text-align: center;
+    color: rgb(24, 100, 241);
+    font-size: 19px;
+  }
+
+  #output >div>p:nth-child(3){
+    margin: 5px;
+    text-align: center;
+    /* color: rgb(24, 100, 241); */
+    font-size: 20px;
+  }
+  
+
