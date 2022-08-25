@@ -44,7 +44,7 @@
 </html>
 <script>
  
-
+ let imgstring;
   getbooks();
 
   async function getbooks() {
@@ -76,12 +76,12 @@
     let i = 0;
     data.map(function (el) {
       // i++
-      console.log("vghv");
-
       let div = document.createElement("div");
       let img = document.createElement("img");
 
       img.src = `http://covers.openlibrary.org/b/isbn/${el.isbn[0]}-L.jpg`;
+
+    //   imgstring=`http://covers.openlibrary.org/b/isbn/${el.isbn[0]}-L.jpg`
 
       // }
 
@@ -99,6 +99,7 @@
       btn1.innerText = "View Now";
       btn2.innerText = "More details";
       btn1.addEventListener("click", function () {
+
         detailsAtNewPage(el);
       });
 
@@ -116,7 +117,9 @@
   }
 
   function detailsAtNewPage(data) {
+    data.image=imgstring
     localStorage.setItem("bookData", JSON.stringify(data));
     window.location.href = "bookdata.html";
+    
   }
 </script>
