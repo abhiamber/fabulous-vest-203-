@@ -8,27 +8,38 @@
     <link rel="stylesheet" href="payment.css">
 </head>
 <body>
+    <div id="heading">
+        <h1>Ideakart</h1>
+    </div>
     <div id="main">
         <h1>Select a payment Method</h1>
         <div id="box">
             <div id="container">
                 <h3>Another Payment Method</h3>
                 <hr>
-                    <ol><input type="checkbox">Add Debit / Credit / ATM Card</ol>
+                    <ol><input type="checkbox" id="one">Add Debit / Credit / ATM Card</ol>
                     <h5>you can save your cards with new RBI guidelines.</h5>
                     <img src="https://ecoheater.ie/wp-content/uploads/2018/10/cards-.jpg" alt="">
-                    <ol><input type="checkbox">Net Banking</ol>
+                    <ol><input type="checkbox" id="two">Net Banking</ol>
                     <h5>For faster payment and instant refund, please use UPI</h5>
-                    <ol><input type="checkbox">Other UPI Apps</ol>
-                    <ol><input type="checkbox">EMI option</ol>
-                    <ol><input type="checkbox">Pay on Delivery</ol>
+                    <ol><input type="checkbox" id="three">Other UPI Apps</ol>
+                    <ol><input type="checkbox" id="four">EMI option</ol>
+                    <ol><input type="checkbox" id="five">Pay on Delivery</ol>
                     <h5>Pay using Cash, Paylink (debit,credit card,UPI) or Scan & Pay (Flat INR 25 back on first Amazon Scan & Pay transaction)</h5>
             </div>
-            <div id="cont">
-                <button> <a href="review.html">Continue</a></button>
-                <h4>You can review this order before it's final</h4>
-            </div>
+                <div id="cont">
+                    <h4>Fill shipment details : </h4><hr>
+                    <label>Name:</label><br>
+                    <input type="text" id="name" placeholder="Enter name"><br>
+                    <label>Address:</label><br>
+                    <input type="text" id="address" placeholder="Enter address"><br>
+                    <label>Phone number:</label><br>
+                    <input type="number" id="number" placeholder="Enter number"><br>
+                    <button onclick="myfunc()">continue</button>
+                    <h4>You can review this order before it's final</h4>
+                </div>
         </div>
         </div>
 </body>
 </html>
+<script src="payment.js"></script>

@@ -5,8 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="review.css">
 </head>
 <body>
+    <div id="heading">
+        <h1>Ideakart</h1>
+    </div>
     <h1>Review your order</h1>
+    <h5 class="grey">By placing your order , you agree to Ideakart's privacy notice and conditon of use</h5>
+    <div id="main">
+        <div id="container">
+            <h1 id="date">Delivery date :</h1>
+            <div id="cont">
+                <div id="product">
+                    <img id="img">
+                </div>
+                <div>
+                    <h4 id="desc"></h4>
+                    <h5 class="grey" id="auth"></h5>
+                    <h4 id="amt"></h4>
+                    <h4>Quantity : <input type="number" oninput="myfunc()" id="quan"></h4>
+                    <h3 class="pink">Shipment details :</h3>
+                    <h4 id="name"></h4>
+                    <h4  id="address"></h4>
+                    <h4  id="number"></h4>
+                </div>
+                <div>
+                    <h3>Choose a delivery speed : </h3>
+                    <h4 class="green"><input type="checkbox" name="" id=""> Sunday  — Free Delivery on first order</h4>
+                    <h4 class="green"><input type="checkbox" name="" id=""> Tomorrow by 9pm  </h4>
+                    <h4 class="green"><input type="checkbox" name="" id=""> Day of own choice  </h4>
+                </div>
+            </div>
+        </div>
+        <div id="order">
+            <button>Place your order</button>
+            <h2>Order summary</h2>
+            <hr>
+            <h3 id="price"></h3>
+            <h3 id="quantity"></h3>
+            <hr>
+            <h2 id="total"></h2>
+        </div>
+    </div>
 </body>
 </html>
+<script src="review.js"></script>
