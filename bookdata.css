@@ -65,9 +65,12 @@
 table{
     width:100%;
 }
-/* th{
+
+#description{
+    line-height:1.5;
+    margin-top: 10px;
+}
+
+th{
     text-align:left;
 }
-td{
-    text-align:right
-} */
