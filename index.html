@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,8 +21,44 @@ div p {
     </style>
     <link rel="stylesheet" href="./styles/navbar.css">
 </head>
+<style>
+    #output{
+       display: grid;
+       grid-template-columns: repeat(4,1fr);
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       gap: 20px 30px;
+       width: 80%;
+       padding: 5px 0px;
+       
+   }
+   #output div{
+    height: 400px;
+   }
+   img{
+       width: 100%;
+       height: 150px;
+       cursor: pointer;
+   
+   }
+   #output >div{
+       margin: auto;
+       height: auto;
+       width: 90%;
+       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+       padding-bottom: 20px;     
+     }
+     #btn1,#btn2{
+       cursor: pointer;
+       margin: 5px;
+       padding: 5px ;
+     } 
+     
 
+</style>
 <body>
+
     <div id="nav_container"></div>
 
 
@@ -50,10 +85,11 @@ div p {
 
 <script >
    
+// getbooks();
 
 async function getbooks() {
 
-  let x = Math.random() * 9;
+  // let x = Math.random() * 9;
   // console.log(x);
   x =Math.floor(x);
   let query=document.getElementById("input").value
@@ -69,13 +105,14 @@ async function getbooks() {
 
   try {
     let data = await res.json();
-    // console.log("csdcjscj ")
-    // console.log(data);
+
+    console.log(data);
     append(data.docs);
   } catch (err) {
     console.log(err);
   }
 }
+let x=0
 
 function append(data) {
   document.getElementById("output").innerHTML = null;
@@ -97,8 +134,9 @@ function append(data) {
     p1.innerText = el.title;
 
     let p3 = document.createElement("p");
-    let x = Math.random() * (1500 - 500) + 500;
-    p3.innerText = `Price -${Math.floor(x)}`;
+    x = Math.random() * (1500 - 500) + 500;
+
+    p3.innerText = `Price ${Math.floor(x)}`;
     let p4 = document.createElement("p");
     p4.innerText = el.author_name;
     
@@ -116,7 +154,7 @@ function append(data) {
       detailsAtNewPage(el);
     });
      
-    div.append(img, p1, p4, p3, btn1, btn2);
+    div.append(img, p1, p3, p4, btn1, btn2);
 
     img.addEventListener("click", function () {
       detailsAtNewPage(el);
@@ -126,21 +164,46 @@ function append(data) {
 }
 
 function detailsAtNewPage(data) {
+  data.price= Math.floor(x)
   localStorage.setItem("bookData", JSON.stringify(data));
   window.location.href = "bookdata.html";
 }
+// let dat=document.getElementById("signinT").innerHTML
+// console.log(dat)
 
 </script>
 
-<!-- ******************************importing Navbar Section -->
+<!-- ************importing Navbar Section -->
 <script type="module">
     import navbar from './components/navbar.js'
 let navbar_append=document.getElementById("nav_container")
 navbar_append.innerHTML=navbar()
 getbooks();
+
+
+let dat=document.getElementById("signinT")
+let dat2=document.getElementById("signupT")
+// console.log(dat)
+ let user_name=JSON.parse(localStorage.getItem("users"))
+ if(user_name!=null){
+  // console.log(user_name)
+
+  dat.addEventListener("click",function(event){
+    event.preventDefault();
+    // window.location.href="./index.html"
+  })
+  dat.innerText=user_name.email
+  dat2.innerHTML="Log Out"
+  dat2.addEventListener("click",function(event){
+    event.preventDefault()
+    dat.innerText="Sign In"
+    dat2.innerText="Sign Up"
+     localStorage.setItem("users",null) 
+    window.location.href="./index.html"
+
+    
+  })
+ }
+
+ 
 </script>
-
-
-
-
-
