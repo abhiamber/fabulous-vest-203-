@@ -21,42 +21,7 @@ div p {
     </style>
     <link rel="stylesheet" href="./styles/navbar.css">
 </head>
-<style>
-    #output{
-       display: grid;
-       grid-template-columns: repeat(4,1fr);
-       justify-content: center;
-       align-items: center;
-       text-align: center;
-       gap: 20px 30px;
-       width: 80%;
-       padding: 5px 0px;
-       
-   }
-   #output div{
-    height: 400px;
-   }
-   img{
-       width: 100%;
-       height: 150px;
-       cursor: pointer;
-   
-   }
-   #output >div{
-       margin: auto;
-       height: auto;
-       width: 90%;
-       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-       padding-bottom: 20px;     
-     }
-     #btn1,#btn2{
-       cursor: pointer;
-       margin: 5px;
-       padding: 5px ;
-     } 
-     
 
-</style>
 <body>
 
     <div id="nav_container"></div>
@@ -89,7 +54,7 @@ div p {
 
 async function getbooks() {
 
-  // let x = Math.random() * 9;
+  let x = Math.random() * 9;
   // console.log(x);
   x =Math.floor(x);
   let query=document.getElementById("input").value
