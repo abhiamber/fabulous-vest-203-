@@ -8,7 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/navbar.css">
 </head>
-<body>
+  <body>
     <div id="nav_container"></div>
 
 
@@ -43,10 +43,7 @@ async function getbooks() {
 
   try {
     let data = await res.json();
-// <<<<<<< HEAD
-    // console.log("csdcjscj ")
-// =======
-// >>>>>>> b20b1a1222e34dc217e838a45b9ebfd6b22b89a9
+
     console.log(data);
     append(data.docs);
   } catch (err) {
@@ -120,14 +117,14 @@ getbooks();
 
 let dat=document.getElementById("signinT")
 let dat2=document.getElementById("signupT")
-console.log(dat)
+// console.log(dat)
  let user_name=JSON.parse(localStorage.getItem("users"))
  if(user_name!=null){
   // console.log(user_name)
 
   dat.addEventListener("click",function(event){
     event.preventDefault();
-    window.location.href="./index.html"
+    // window.location.href="./index.html"
   })
   dat.innerText=user_name.email
   dat2.innerHTML="Log Out"
