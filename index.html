@@ -44,6 +44,7 @@
 
 </style>
 <body>
+
     <div id="nav_container"></div>
 
 
@@ -78,7 +79,8 @@ async function getbooks() {
 
   try {
     let data = await res.json();
-    // console.log(data);
+
+    console.log(data);
     append(data.docs);
   } catch (err) {
     console.log(err);
@@ -107,6 +109,7 @@ function append(data) {
 
     let p3 = document.createElement("p");
     x = Math.random() * (1500 - 500) + 500;
+
     p3.innerText = `Price ${Math.floor(x)}`;
     let p4 = document.createElement("p");
     p4.innerText = el.author_name;
@@ -139,6 +142,8 @@ function detailsAtNewPage(data) {
   localStorage.setItem("bookData", JSON.stringify(data));
   window.location.href = "bookdata.html";
 }
+// let dat=document.getElementById("signinT").innerHTML
+// console.log(dat)
 
 </script>
 
@@ -148,4 +153,31 @@ function detailsAtNewPage(data) {
 let navbar_append=document.getElementById("nav_container")
 navbar_append.innerHTML=navbar()
 getbooks();
+
+
+let dat=document.getElementById("signinT")
+let dat2=document.getElementById("signupT")
+// console.log(dat)
+ let user_name=JSON.parse(localStorage.getItem("users"))
+ if(user_name!=null){
+  // console.log(user_name)
+
+  dat.addEventListener("click",function(event){
+    event.preventDefault();
+    // window.location.href="./index.html"
+  })
+  dat.innerText=user_name.email
+  dat2.innerHTML="Log Out"
+  dat2.addEventListener("click",function(event){
+    event.preventDefault()
+    dat.innerText="Sign In"
+    dat2.innerText="Sign Up"
+     localStorage.setItem("users",null) 
+    window.location.href="./index.html"
+
+    
+  })
+ }
+
+ 
 </script>

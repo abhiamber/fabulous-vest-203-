@@ -20,8 +20,8 @@ function navbar(){
         <p><a href="./about.html">About</a></p>
         
         <p><a href="./contact.html">Contact</a></p>
-        <p><a href="./signin.html">Sign In</a></p>
-        <p><a href="./signup.html">Sign Up</a></p>
+        <p><a href="./signin.html" id="signinT">Sign In</a></p>
+        <p><a href="./signup.html" id="signupT">Sign Up</a></p>
     </div>
 </div>
 

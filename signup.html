@@ -158,11 +158,12 @@
 <script>
   let res = document.getElementById("res");
   let state = document.getElementById("state");
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  let users = JSON.parse(localStorage.getItem("users")) || {};
   let submit = document.getElementById("submit");
   let rd_link = document.getElementById("rd-link");
   let success = document.getElementById("success");
   submit.addEventListener("click", () => {
+    console.log("12");
     let user = {
       email: document.getElementById("email").value,
       password: document.getElementById("password").value,
@@ -176,8 +177,8 @@
       rd_link.textContent = "Retry";
       return;
     }
-    users.push(user);
-    localStorage.setItem("users", JSON.stringify(users));
+    // users.push(user);
+    localStorage.setItem("users", JSON.stringify(user));
     success.style.display = "flex";
     state.textContent = "Success!";
     state.style.color = "Green";
@@ -187,9 +188,9 @@
   });
 </script>
 
-<script type="module">
+<!-- <script type="module">
 
     import navbar from './components/navbar.js'
     let navbar_append=document.getElementById("nav_container")
     navbar_append.innerHTML=navbar()
-</script>
+</script> -->

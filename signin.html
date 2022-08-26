@@ -159,32 +159,32 @@
 <script>
   let res = document.getElementById("res");
   let state = document.getElementById("state");
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  let user = JSON.parse(localStorage.getItem("users")) || {};
   let submit = document.getElementById("submit");
   let rd_link = document.getElementById("rd-link");
   let success = document.getElementById("success");
   submit.addEventListener("click", () => {
-    let user = {
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
-    };
-    if (user.email == "" || user.password == "") {
+    
+      email1= document.getElementById("email").value;
+      password1= document.getElementById("password").value;
+    
+    if (email1 == "" || password1 == "") {
       success.style.display = "flex";
       state.textContent = "Error!";
       state.style.color = "red";
       res.textContent = "Please fill all the fields";
-      rd_link.href = "login.html";
+      rd_link.href = "signin.html";
       rd_link.textContent = "Retry";
       return;
     }
-    let isFound = false;
-    users.forEach((el) => {
-      if (user.user == el.username && user.password == el.password) {
-        isFound = true;
-        return;
-      }
-    });
-    if (!isFound) {
+    // let isFound = false;
+    // users.forEach((el) => {
+    //   if (user.user == el.username && user.password == el.password) {
+    //     isFound = true;
+    //     return;
+    //   }
+    // });
+    if (email1!=user.email || password1!=user.password) {
       success.style.display = "flex";
       state.textContent = "Error!";
       state.style.color = "red";
@@ -198,22 +198,15 @@
       res.textContent = "Your have been successfuly logged in";
       rd_link.href = "index.html";
       rd_link.textContent = "Continue";
-      localStorage.setItem(
-        "loggedin",
-        JSON.stringify({
-          username: user.email,
-          pm: false,
-        })
-      );
     }
   });
 </script>
 
 
 
-<script type="module">
+<!-- <script type="module">
 
     import navbar from './components/navbar.js'
     let navbar_append=document.getElementById("nav_container")
     navbar_append.innerHTML=navbar()
-</script>
+</script> -->
