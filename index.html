@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,70 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-         #output{
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: 20px 30px;
-        }
-        img{
-            width: 100%;
-            height: 200px;
-            cursor: pointer;
-            
-        }
-        #output >div{
-            margin: auto;
-            height: auto;
-            width: 90%;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-            padding-bottom: 20px;     
-          }
-          button{
-            cursor: pointer;
-            margin: 5px;
-            padding: 5px ;
-          }
+    <link rel="stylesheet" href="./styles/navbar.css">
+</head>
 
-    </style>
-  </head>
-  <body>
-    <h1>JS201</h1>
-    <input type="text" id="input" />
-    <input type="submit" onclick="getbooks()" />
+<body>
+    <div id="nav_container"></div>
+
+
+    <!-- <input id="input"> -->
+        
+
+
+
     <div id="output"></div>
-  </body>
+</body>
 </html>
 <script>
  
  let imgstring;
   getbooks();
 
-  async function getbooks() {
+async function getbooks() {
 
-    let x = Math.random() * 9;
-    x =Math.floor(x);
-    let query=document.getElementById("input").value
-    if(!query){
-        value=`Harry${x}`
-    }else{
-        value=query
-    }
-
-    let res = await fetch(`http://openlibrary.org/search.json?title=${value}`);
-
-
-    try {
-      let data = await res.json();
-      console.log(data);
-      append(data.docs);
-    } catch (err) {
-      console.log(err);
-    }
+  let x = Math.random() * 9;
+  // console.log(x);
+  x =Math.floor(x);
+  let query=document.getElementById("input").value
+  // console.log(query)
+  if(!query){
+      value=`Harry${x}`
+  }else{
+      value=query
   }
+
+  let res = await fetch(`https://openlibrary.org/search.json?title=${value}`);
+
+
+  try {
+    let data = await res.json();
 
   function append(data) {
     document.getElementById("output").innerHTML = null;
@@ -78,21 +53,74 @@
       // i++
       let div = document.createElement("div");
       let img = document.createElement("img");
+    append(data.docs);
+  } catch (err) {
+    console.log(err);
+  }
+}
 
-      img.src = `http://covers.openlibrary.org/b/isbn/${el.isbn[0]}-L.jpg`;
+function append(data) {
+  document.getElementById("output").innerHTML = null;
+  // console.log(data);
+  let i = 0;
+  data.map(function (el) {
+// console.log(i++)
+    let div = document.createElement("div");
+    let img = document.createElement("img");
+     if(el.isbn==null){
+      img.src='https://covers.openlibrary.org/b/isbn/9780297858065-L.jpg'
+     }else{
+      img.src = `https://covers.openlibrary.org/b/isbn/${el.isbn[0]}-L.jpg`;
 
-    //   imgstring=`http://covers.openlibrary.org/b/isbn/${el.isbn[0]}-L.jpg`
+     }
 
-      // }
 
-      let p1 = document.createElement("p");
-      p1.innerText = el.title;
+    let p1 = document.createElement("p");
+    p1.innerText = el.title;
 
-      let p3 = document.createElement("p");
-      let x = Math.random() * (1500 - 500) + 500;
-      p3.innerText = `Price ${Math.floor(x)}`;
-      let p4 = document.createElement("p");
-      p4.innerText = el.author_name;
+    let p3 = document.createElement("p");
+    let x = Math.random() * (1500 - 500) + 500;
+    p3.innerText = `Price -${Math.floor(x)}`;
+    let p4 = document.createElement("p");
+    p4.innerText = el.author_name;
+    
+    let btn1 = document.createElement("button");
+    btn1.setAttribute("id","btn1")
+    let btn2 = document.createElement("button");
+    btn2.setAttribute("id","btn2")
+    btn1.innerText = "View Now";
+    btn2.innerText = "More details";
+    btn1.addEventListener("click", function () {
+      detailsAtNewPage(el);
+    });
+
+    btn2.addEventListener("click", function () {
+      detailsAtNewPage(el);
+    });
+     
+    div.append(img, p1, p4, p3, btn1, btn2);
+
+    img.addEventListener("click", function () {
+      detailsAtNewPage(el);
+    });
+    document.getElementById("output").append(div);
+  });
+}
+
+function detailsAtNewPage(data) {
+  localStorage.setItem("bookData", JSON.stringify(data));
+  window.location.href = "bookdata.html";
+}
+
+</script>
+
+<!-- ******************************importing Navbar Section -->
+<script type="module">
+    import navbar from './components/navbar.js'
+let navbar_append=document.getElementById("nav_container")
+navbar_append.innerHTML=navbar()
+getbooks();
+</script>
 
       let btn1 = document.createElement("button");
       let btn2 = document.createElement("button");
@@ -102,19 +130,6 @@
 
         detailsAtNewPage(el);
       });
-
-      btn2.addEventListener("click", function () {
-        detailsAtNewPage(el);
-      });
-
-      div.append(img, p1, p3, p4, btn1, btn2);
-
-      img.addEventListener("click", function () {
-        detailsAtNewPage(el);
-      });
-      document.getElementById("output").append(div);
-    });
-  }
 
   function detailsAtNewPage(data) {
     data.image=imgstring
