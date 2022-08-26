@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carb Manager - Low Carb & Keto Diet Tracker</title>
+    <title>Sign Up </title>
     <style>
       * {
         margin: 0;
@@ -142,11 +142,11 @@
         <h2>Let's set up your account</h2>
         <input type="text" placeholder="First Name (optional)" />
         <input type="text" id="email" placeholder="Email Address" />
-        <input type="text" id="password" placeholder="Password" />
+        <input type="password" id="password" placeholder="Password" />
         <button id="submit">Create My Account</button>
         <div>OR</div>
         <button id="facebook">Continue With Facebook</button>
-        <button id="google">Continue With Google</button>
+        <button id="google">Continue With Gmail</button>
         <p>
           Alreday have an accoun?
           <span><a href="signin.html"> Login here.</a></span>
@@ -186,6 +186,15 @@
     rd_link.href = "signin.html";
     rd_link.textContent = "Continue";
   });
+  let fbook=document.getElementById("facebook")
+  fbook.addEventListener("click",function(){
+// event.addEventListener();
+window.location.href="https://www.facebook.com/"
+  })
+  let gooogle=document.getElementById("google")
+  gooogle.addEventListener("click",function(){
+    window.location.href="https://www.gmail.com/"
+  })
 </script>
 
 <!-- <script type="module">
