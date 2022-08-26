@@ -3,38 +3,40 @@
     margin: 0%;
     padding: 0%;
 }
+
 #navbar{
     display: flex;
-    padding: 5px;
+    padding: 10px;
     background-color: #2196F3;
-    /* border: 2px solid red; */
+    border: 2px solid red;
     justify-content: space-around;
     align-items: center;
     /* padding: -10px; */
 }
 #search{
     display: flex;
-    /* border: 2px solid blue; */
-    width: 40%;
+    border: 2px solid blue;
+    /* width: 40rem; */
+    /* justify-content: space-between; */
     
 }
 #home{
     padding-right: 40px;
+    border: 5px solid green;
 }
 
 #results{
-    
+    border: 5px solid goldenrod;
     align-items: center;
     display: flex;
     
-
+    
 }
 #options{
     display: flex;
     gap: 20px;
     /* border: 2px solid brown; */
     font-size: 13px;
-    font-size: 0.6rem;
     font-family: verdana,arial,helvetica,sans-serif;
 }
 #options>p>a{
@@ -47,29 +49,33 @@
     border: 1px solid black;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
-    height: 1.42rem;
+    height: 1.75rem;
+    
 }
 #btn:hover{
     cursor: pointer;
     background-color: gainsboro;
 }
 #input{
-    border: 1px solid black;
+    /* border: 10px solid black; */
     border-right: none;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    height: 1.3rem;
-    width: 11234567345670%;
+    height: 1.6rem;
+    padding: 0px 60px;
+    
+    
     /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
     
     
 }
 ::-webkit-input-placeholder{
-    font-size: 9px;
+    font-size: 12px;
+    
 }
 #logo{
-    font-size: 13px;
-    padding-top: 0.3rem;
+    font-size: 16px;
+    padding-top: 0.5rem;
     
 }
 #logo>a{
@@ -78,3 +84,67 @@
     color: yellow;
     
 }
+
+
+/*  Landin PAge css */
+
+#output{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px 30px;
+    width: 95%;
+    padding: 5px 0px;
+    margin: auto;
+    margin-top: 20px;
+    
+}
+#output div{
+ height: 400px;
+}
+img{
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    margin-bottom: 10px;
+
+}
+#output >div{
+    margin: auto;
+    height: auto;
+    width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
+    padding-bottom: 20px;     
+  }
+  #btn1,#btn2{
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px ;
+    background-color: grey;
+    color: whitesmoke;
+    border: 1px transparent;
+  } 
+
+  #btn1:hover,#btn2:hover{
+    color: rgb(9, 63, 243);
+    background-color: whitesmoke;
+    border: 1px solid gray;
+    text-decoration: underline;
+  }
+  #output >div>p:nth-child(4){
+    margin: 5px;
+    text-align: center;
+    color: rgb(24, 100, 241);
+    font-size: 19px;
+  }
+
+  #output >div>p:nth-child(3){
+    margin: 5px;
+    text-align: center;
+    /* color: rgb(24, 100, 241); */
+    font-size: 20px;
+  }
+  
+

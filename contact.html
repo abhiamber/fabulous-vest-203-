@@ -6,9 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="./styles/navbar.css">
+    <style>
+        body{
+          background-image: url("https://th.bing.com/th/id/OIP.uMaRJVc0JTNlTNcO82LU0wHaEK?pid=ImgDet&rs=1");
+       background-repeat: no-repeat;
+            background-attachment: fixed;
+           background-size: cover;
+      }
+       #container{
+           display: grid;
+           grid-template-columns: repeat(2,1fr);
+           gap:5px;
+           margin-top: 100px;
+
+       }
+       #container>div{
+           width: 600px;
+           margin: auto;
+       }
+       #container>div>input{
+           width:100%;
+           height:30px;
+           border-radius: 5px;
+           padding-right: 30px;
+       }
+       #container>div>p{
+           text-align: center;
+       }
+       #message{
+            text-align: center;
+       }
+       #message>input{
+           width: 80%;
+           padding-bottom: 100px;
+       }
+       h4{
+           text-align: center;
+           margin-top: 100px;
+           margin-bottom: -100px;
+       }
+       #button>button{
+           color: white;
+           background-color:green;
+           border: green;
+           border-radius: 10px;
+           height: 40px;
+           width: 100px;
+       }
+       #button{
+           text-align: center;
+           margin-top: 15px;
+       }
+       #getTo{
+    height: 300px;
+    width: 300px;
+    padding-left: 50px;   
+}
+div p {
+            color:blue;
+             
+         }
+         #getTo>a{
+            display: grid;
+        }
+   </style>
 </head>
 <body>
     <div id="nav_container"></div>
+    <h4>You can contact our team by filling this form</h4>
+    <div id="container">
+        <div><p>Firstname *</p><input type="text" placeholder="Please enter your Firstname *"></div>
+
+        <div><p>Lastname *</p><input type="text" id="" placeholder="Please enter your Lastname"></div>
+
+        <div><p>Email *</p><input type="text" placeholder="please Enter your email"> </div>
+
+        <div><p>Phone *</p><input type="text" placeholder="please enter your phone"></div>
+    </div>
+    <div id="message">
+        <p>Message *</p>
+        <input type="text" placeholder="Message for me *">
+    </div>
+    <div id="button">
+    <button>Send Message</button>
+    <div id="getTo">
+        <h3>Get To Know Us</h3>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="search.html">Search</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="return.html">Refund Policy</a>
+        <a href="Earn.html">Earn Money Online</a>
+        <a href="#">QuickBuyer</a>
 </body>
 </html>
 <script type="module">

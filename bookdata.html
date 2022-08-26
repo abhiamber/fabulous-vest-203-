@@ -7,21 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bookdata.css">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/navbar.css">
 </head>
 
 <body>
-    <div id="navbar"></div>
-    <div id="parent">
-        <!-- Parent -->
-        <div>
-            <!-- Parent First Child-->
-            <div>
-                <!-- img div-->
-                <img src="https://images-eu.ssl-images-amazon.com/images/I/511cKFRBL3L.jpg" alt="">
+    <div id="nav_container">
+        
+    </div>
+    <div id="parent"><!-- Parent -->
+        <div><!-- Parent First Child-->
+            <div><!-- img div-->
+                <img id="book_image" src="" alt="Book Image">
             </div>
             <p>Buy it at <b>best price</b> from here</p>
             <div style="display: flex; justify-content: space-between;">
-                <p> Rs. 1217</p>
+                <p class="price"> Rs. 1217</p>
                 <button>But Now</button>
             </div>
             <p style="text-align: center; background-color: #9ACD32; padding: 2px; color: white; font-weight: bold;">Get
@@ -29,7 +29,7 @@
             <div>
                 <p>Book Specification</p>
                 <div>
-                    <table>
+                    <table id="big">
                         <tr>
                             <th>Binding</th>
                             <td>hardcore</td>
@@ -40,23 +40,23 @@
                         </tr>
                         <tr>
                             <th>Number Of Pages </th>
-                            <td>208</td>
+                            <td id="number_of_pages">208</td>
                         </tr>
                         <tr>
                             <th>Author</th>
-                            <td><a href="#">Reshma Saujani</a></td>
+                            <td ><a id="author_name" href="#">Reshma Saujani</a></td>
                         </tr>
                         <tr>
                             <th>Publisher</th>
-                            <td><a href="#">Currency</a></td>
+                            <td><a id="publisher_name" href="#">Currency</a></td>
                         </tr>
                         <tr>
                             <th>Isbn-10 </th>
-                            <td>1524762334</td>
+                            <td id="isbn10">1524762334</td>
                         </tr>
                         <tr>
                             <th>Isbn-13 </th>
-                            <td>9781524762339</td>
+                            <td id="isbn13">9781524762339</td>
                         </tr>
                         <tr>
                             <th>Dimension</th>
@@ -69,27 +69,10 @@
         <div>
             <p>Refresh</p>
             <button id="refresh"><a href="">Refresh Prices &#x21bb;</a></button>
-            <h1>Brave, Not Perfect: Fear Less, Fail More, and Live Bolder</h1>
+            <h1 id="title">Brave, Not Perfect: Fear Less, Fail More, and Live Bolder</h1>
             <div class="box">
-                <h2>Reshma Saujani's Brave, Not Perfect: Fear Less, Fail More, and Live Bolder</h2>
-                <p>In a book inspired by her popular TED talk, New York Times bestselling author Reshma Saujani empowers
-                    Women and Girls to embrace imperfection and bravery.Imagine if you lived without the fear of not
-                    being good enough. If you didn't care how your life looked on Instagram, or worry about what total
-                    strangers thought of you. Imagine if you could let go of the guilt, and stop beating yourself up for
-                    tiny mistakes. What if, in every decision you faced, you took the bolder path?Too many of us feel
-                    crushed under the weight of our own expectations. We run ourselves ragged trying to please everyone,
-                    all the time. We lose sleep ruminating about whether we may have offended someone, pass up
-                    Opportunities that take us out of our comfort zones, and avoid rejection at all costs.There's a
-                    reason we act this way, Reshma says. As girls, we were taught to play it safe. Well-meaning parents
-                    and teachers praised us for being quiet and polite, urged us to be careful so we didn't get hurt,
-                    and steered us to activities at which we could shine. The problem is that perfect Girls grow up to
-                    be Women who are afraid to fail. It's Time to stop letting our fears drown out our dreams and narrow
-                    our world, along with our chance at happiness.By choosing bravery over perfection, we can find the
-                    power to claim our voice, to leave behind what makes us unhappy, and go for the things we genuinely,
-                    passionately want. Perfection may set us on a path that feels safe, but bravery leads us to the one
-                    we're authentically meant to follow.In Brave, Not Perfect, Reshma shares powerful insights and
-                    practices to help us override our perfect girl training and make bravery a lifelong habit. By being
-                    brave, not perfect, we can all become the authors of our biggest, boldest, and most joyful life.</p>
+                <h2 id="authortitle">Reshma Saujani's Brave, Not Perfect: Fear Less, Fail More, and Live Bolder</h2>
+                <p id="description"></p>
             </div>
             <table>
                 <thead>
@@ -102,8 +85,13 @@
                 <tbody class="box">
                     <tr>
                         <td>Amazon, Hardcover</td>
+<<<<<<< HEAD
                         <td>Rs. 1432.0</td>
                         <td><button> <a href="payment.html">But Now</a> </button></td>
+=======
+                        <td class="price">Rs. 1432.0</td>
+                        <td><button>But Now</button></td>
+>>>>>>> f756f6c9366ffa53dfa056900ec391d9c12001ec
                     </tr>
                 </tbody>
             </table>
@@ -112,4 +100,4 @@
 </body>
 
 </html>
-<script src="bookdata.js"></script>
+<script src="bookdata.js" type="module"></script>
