@@ -21,9 +21,10 @@
     <div id="output"></div>
 </body>
 </html>
-
-<script >
-   
+<script>
+ 
+ let imgstring;
+  getbooks();
 
 async function getbooks() {
 
@@ -44,6 +45,14 @@ async function getbooks() {
   try {
     let data = await res.json();
 
+  function append(data) {
+    document.getElementById("output").innerHTML = null;
+    console.log(data);
+    let i = 0;
+    data.map(function (el) {
+      // i++
+      let div = document.createElement("div");
+      let img = document.createElement("img");
     append(data.docs);
   } catch (err) {
     console.log(err);
@@ -113,7 +122,19 @@ navbar_append.innerHTML=navbar()
 getbooks();
 </script>
 
+      let btn1 = document.createElement("button");
+      let btn2 = document.createElement("button");
+      btn1.innerText = "View Now";
+      btn2.innerText = "More details";
+      btn1.addEventListener("click", function () {
 
+        detailsAtNewPage(el);
+      });
 
-
-
+  function detailsAtNewPage(data) {
+    data.image=imgstring
+    localStorage.setItem("bookData", JSON.stringify(data));
+    window.location.href = "bookdata.html";
+    
+  }
+</script>
