@@ -24,12 +24,18 @@
     padding-left: 200px; 
     padding-top: 50px; 
          }
-
+         #getTo>a{
+            display: grid;
+        }
+     
+        
 
      </style>
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
 </head>
 <body>
+    <div id="nav_container"></div>
     <div id="pr">
       <h1> Privacy Policy for Ideakart</h1>
       <p>At www.ideakart.com we consider the privacy of our visitors to be extremely important. This privacy policy document describes in detail the types of personal information is collected and recorded by www.ideakart.com and how we use it.</p>
@@ -60,14 +66,24 @@
     </div>
     <div id="getTo">
         <h3>Get To Know Us</h3>
-         <p> *  About</p> 
-         <p> *  Contact</p> 
-         <p> *  Search</p> 
-         <p> *  Privacy Policy</p> 
-         <p> *  Refund Policy</p> 
-         <p> *  Earn Money Online</p> 
-         <p> *  QuickBuyer</p> 
- 
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="search.html">Search</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="return.html">Refund Policy</a>
+        <a href="Earn.html">Earn Money Online</a>
+        <a href="#">QuickBuyer</a>
+    
+        
      </div>
+     
 </body>
 </html>
+ 
+ 
+<script type="module">
+
+    import navbar from './components/navbar.js'
+    let navbar_append=document.getElementById("nav_container")
+    navbar_append.innerHTML=navbar()
+</script>

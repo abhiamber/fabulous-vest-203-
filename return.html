@@ -19,11 +19,16 @@
     padding-left: 150px; 
     padding-top: 50px; 
          }
+         #getTo>a{
+        display: grid;
+    }
 
     </style>
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
 </head>
 <body>
+    <div id="nav_container"></div>
    <div id="return">
    <h1>Return & Refund Policy</h1>
    <h3>Thanks for shopping at Ideakart.com.</h3>
@@ -43,19 +48,26 @@
    <h1>Contact Us</h1>
     <h3>If you have any questions on how to return your item to us, contact us at 9650122736</h3>
 </div>
-   <div id="getTo">
+<div id="getTo">
     <h3>Get To Know Us</h3>
-     <p> *  About</p> 
-     <p> *  Contact</p> 
-     <p> *  Search</p> 
-     <p> *  Privacy Policy</p> 
-     <p> *  Refund Policy</p> 
-     <p> *  Earn Money Online</p> 
-     <p> *  QuickBuyer</p> 
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="search.html">Search</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="return.html">Refund Policy</a>
+    <a href="Earn.html">Earn Money Online</a>
+    <a href="#">QuickBuyer</a>
 
+    
  </div>
-
-
 
 </body>
 </html>
+ 
+
+<script type="module">
+
+    import navbar from './components/navbar.js'
+    let navbar_append=document.getElementById("nav_container")
+    navbar_append.innerHTML=navbar()
+</script>
