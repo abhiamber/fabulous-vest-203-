@@ -130,3 +130,18 @@ table , th ,td{
 th {
     text-align:left;
 }
+
+@media screen and (max-width:1000px) {
+    #parent{
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: auto;
+        margin-top:20px;
+        width:100%;
+    }
+
+    #parent > div:nth-child(2){
+        margin:auto;
+    }
+}
