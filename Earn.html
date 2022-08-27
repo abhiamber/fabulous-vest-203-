@@ -21,10 +21,24 @@
          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     }
+    #getTo{
+        height: 100px;
+        width: 200px;
+        padding-left: 100px;   
+    }
+    #getTo p {
+                color:blue;
+                 font-size:medium;
+             }
+             #getTo>a{
+            display: grid;
+        }
     </style>
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
 </head>
 <body>
+    <div id="nav_container"></div>
     <h1>Earn Money Online | Working from Home</h1>
     <div id="ret">
      <div>
@@ -55,5 +69,25 @@
 
      </div>
     </div>
+    <div id="getTo">
+        <h3>Get To Know Us</h3>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="search.html">Search</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="return.html">Refund Policy</a>
+        <a href="Earn.html">Earn Money Online</a>
+        <a href="#">QuickBuyer</a>
+
+        
+    
 </body>
 </html>
+
+ 
+<script type="module">
+
+    import navbar from './components/navbar.js'
+    let navbar_append=document.getElementById("nav_container")
+    navbar_append.innerHTML=navbar()
+</script>

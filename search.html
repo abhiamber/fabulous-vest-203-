@@ -5,12 +5,12 @@
         #Result{
             
             text-align: center;
-            font-size: 50px;
+            font-size: 49px;
             margin: auto;
             padding-top: 20px;
  
         }
-        input {            
+         #am{            
             width: 1000px;
             padding-top: 20px;
             border-radius: 10px;
@@ -30,27 +30,42 @@
             color:rgb(64, 64, 230);
              font-size:medium;
          }
+         #getTo>a{
+            display: grid;
+        }
      </style>
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
 </head>
 <body>
+    <div id="nav_container"></div>
     <div id="Result">
         <p>Search Result for</p>
     </div>
-    <input />
+    <input id="am" />
     <p class="no">No Result</p>
 
     
     <div id="getTo">
         <h3>Get To Know Us</h3>
-         <p> *  About</p> 
-         <p> *  Contact</p> 
-         <p> *  Search</p> 
-         <p> *  Privacy Policy</p> 
-         <p> *  Refund Policy</p> 
-         <p> *  Earn Money Online</p> 
-         <p> *  QuickBuyer</p> 
- 
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="search.html">Search</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="return.html">Refund Policy</a>
+        <a href="Earn.html">Earn Money Online</a>
+        <a href="#">QuickBuyer</a>
+
+        
      </div>
+     
 </body>
 </html>
+ 
+
+<script type="module">
+
+    import navbar from './components/navbar.js'
+    let navbar_append=document.getElementById("nav_container")
+    navbar_append.innerHTML=navbar()
+</script>

@@ -5,44 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #getTo{
+    height: 300px;
+    width: 300px;
+    padding-left: 50px;   
+}
+div p {
+            color:blue;
+             
+         }
+         #getTo>a{
+            display: grid;
+        }
+    </style>
     <link rel="stylesheet" href="./styles/navbar.css">
 </head>
-<style>
-    #output{
-       display: grid;
-       grid-template-columns: repeat(4,1fr);
-       justify-content: center;
-       align-items: center;
-       text-align: center;
-       gap: 20px 30px;
-       width: 80%;
-       padding: 5px 0px;
-       
-   }
-   #output div{
-    height: 400px;
-   }
-   img{
-       width: 100%;
-       height: 150px;
-       cursor: pointer;
-   
-   }
-   #output >div{
-       margin: auto;
-       height: auto;
-       width: 90%;
-       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; 
-       padding-bottom: 20px;     
-     }
-     #btn1,#btn2{
-       cursor: pointer;
-       margin: 5px;
-       padding: 5px ;
-     } 
-     
 
-</style>
 <body>
 
     <div id="nav_container"></div>
@@ -54,6 +33,18 @@
 
 
     <div id="output"></div>
+    <div id="getTo">
+      <h3>Get To Know Us</h3>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="search.html">Search</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="return.html">Refund Policy</a>
+      <a href="Earn.html">Earn Money Online</a>
+      <a href="#">QuickBuyer</a>
+  
+      
+   </div>
 </body>
 </html>
 
@@ -158,6 +149,8 @@ getbooks();
 
 let dat=document.getElementById("signinT")
 let dat2=document.getElementById("signupT")
+let dat3=document.getElementById("account_tab") 
+//added account tab that will appear only after SignIn
 // console.log(dat)
  let user_name=JSON.parse(localStorage.getItem("users"))
  if(user_name!=null){
@@ -173,10 +166,17 @@ let dat2=document.getElementById("signupT")
     event.preventDefault()
     dat.innerText="Sign In"
     dat2.innerText="Sign Up"
+    localStorage.setItem("users",null) 
      localStorage.setItem("users",null) 
+    localStorage.setItem("users",null) 
     window.location.href="./index.html"
-
     
+    
+  })
+  dat3.classList.remove("account_tab")
+  dat3.addEventListener("click",function (event){
+    event.preventDefault()
+    window.location.href="./account.html"
   })
  }
 
