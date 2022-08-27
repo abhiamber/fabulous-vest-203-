@@ -134,7 +134,7 @@ img{
     border: 1px solid gray;
     text-decoration: underline;
   }
-  #output >div>p:nth-child(4){
+  #output >div>p:nth-child(3){
     margin: 5px;
     text-align: center;
     color: rgb(24, 100, 241);
@@ -151,5 +151,51 @@ img{
   .account_tab{
     display: none;
   }
+
+  #getTo{
+    /* height: 300px;
+    width: 70%; */
+    padding-left: 50px;
+    font-size: 20px;
+    margin-top: 30px;   
+}
+div p {
+            color:rgb(73, 73, 73);
+             
+         }
+         #getTo,a{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-decoration: none;
+        }
+
+  @media all and (min-width: 180px) and (max-width: 480px) {
+    
+#output{
+    grid-template-columns: repeat(1,1fr);
+    
+    
+}
+#getTo{
+    text-align: center;
+    padding: 0;
+}
+    }
+
+
+    @media all and (min-width: 480px) and (max-width: 780px) {
+    
+        #output{
+            grid-template-columns: repeat(2,1fr);
+            /* padding: 0 15px; */
+            
+            
+        }
+        #getTo{
+            text-align: center;
+            padding: 0;
+        }
+            }
   
 

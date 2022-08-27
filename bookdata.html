@@ -19,17 +19,20 @@
             <div><!-- img div-->
                 <img id="book_image" src="" alt="Book Image">
             </div>
-            <p>Buy it at <b>best price</b> from here</p>
-            <div style="display: flex; justify-content: space-between;">
+            <marquee behavior="" direction="">
+                <p style="margin-top: 10px; margin-bottom:10px;">Buy it at <b>best price</b> from here</p>
+            </marquee>
+            
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; align-items: center;">
                 <p class="price"> Rs. 1217</p>
-                <button>But Now</button>
+                <button class="buynow">Buy Now</button>
             </div>
             <p style="text-align: center; background-color: #9ACD32; padding: 2px; color: white; font-weight: bold;">Get
                 Instant Cashback when you pay using Amazon Pay... Click Here</p>
             <div>
-                <p>Book Specification</p>
+                <p style="margin-top: 10px; font-size:20px; font-weight: bold;">Book Specification</p>
                 <div>
-                    <table id="big">
+                    <table>
                         <tr>
                             <th>Binding</th>
                             <td>hardcore</td>
@@ -67,11 +70,11 @@
             </div>
         </div>
         <div>
-            <p>Refresh</p>
+            <p style="font-size: 20px;">Refresh</p>
             <button id="refresh"><a href="">Refresh Prices &#x21bb;</a></button>
             <h1 id="title">Brave, Not Perfect: Fear Less, Fail More, and Live Bolder</h1>
             <div class="box">
-                <h2 id="authortitle">Reshma Saujani's Brave, Not Perfect: Fear Less, Fail More, and Live Bolder</h2>
+                <h2 id="authortitle"></h2>
                 <p id="description"></p>
             </div>
             <table>
@@ -85,8 +88,17 @@
                 <tbody class="box">
                     <tr>
                         <td>Amazon, Hardcover</td>
+
                         <td class="price">Rs. 1432.0</td>
                         <td><button>But Now</button></td>
+=======
+                        <!-- <td>Rs. 1432.0</td> -->
+                        
+
+                        <td class="price">Rs. 1432.0</td>
+                        <td><button class="buynow"> <a style="text-decoration: none;color: white;" href="payment.html">Buy Now</a> </button></td>
+                        <!-- <td><button>Buy Now</button></td> -->
+
                     </tr>
                 </tbody>
             </table>
