@@ -133,7 +133,7 @@ img{
     border: 1px solid gray;
     text-decoration: underline;
   }
-  #output >div>p:nth-child(4){
+  #output >div>p:nth-child(3){
     margin: 5px;
     text-align: center;
     color: rgb(24, 100, 241);
@@ -150,5 +150,24 @@ img{
   .account_tab{
     display: none;
   }
+
+  @media all and (min-width: 180px) and (max-width: 480px) {
+    
+#output{
+    grid-template-columns: repeat(1,1fr);
+    
+    
+}
+    }
+
+
+    @media all and (min-width: 480px) and (max-width: 780px) {
+    
+        #output{
+            grid-template-columns: repeat(2,1fr);
+            
+            
+        }
+            }
   
 
