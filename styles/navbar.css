@@ -151,12 +151,34 @@ img{
     display: none;
   }
 
+  #getTo{
+    /* height: 300px;
+    width: 70%; */
+    padding-left: 50px;
+    font-size: 20px;
+    margin-top: 30px;   
+}
+div p {
+            color:rgb(73, 73, 73);
+             
+         }
+         #getTo,a{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            text-decoration: none;
+        }
+
   @media all and (min-width: 180px) and (max-width: 480px) {
     
 #output{
     grid-template-columns: repeat(1,1fr);
     
     
+}
+#getTo{
+    text-align: center;
+    padding: 0;
 }
     }
 
@@ -165,8 +187,13 @@ img{
     
         #output{
             grid-template-columns: repeat(2,1fr);
+            /* padding: 0 15px; */
             
             
+        }
+        #getTo{
+            text-align: center;
+            padding: 0;
         }
             }
   
