@@ -63,7 +63,7 @@
 
 async function getbooks() {
 
-  // let x = Math.random() * 9;
+  let x = Math.random() * 9;
   // console.log(x);
   x =Math.floor(x);
   let query=document.getElementById("input").value
@@ -109,7 +109,7 @@ function append(data) {
 
     let p3 = document.createElement("p");
     x = Math.random() * (1500 - 500) + 500;
-
+    el.price=x
     p3.innerText = `Price ${Math.floor(x)}`;
     let p4 = document.createElement("p");
     p4.innerText = el.author_name;
@@ -138,7 +138,8 @@ function append(data) {
 }
 
 function detailsAtNewPage(data) {
-  data.price= Math.floor(x)
+  // data.price= x
+  // console.log(data);
   localStorage.setItem("bookData", JSON.stringify(data));
   window.location.href = "bookdata.html";
 }

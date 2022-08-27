@@ -11,6 +11,7 @@
     display:flex;
     flex-wrap: wrap;
     margin: auto;
+    margin-top:20px;
     width:80%;
 }
 
@@ -45,12 +46,14 @@
 
 #refresh{
     background-color:var(--refreshprice);
-    width:150px;
+    width:200px;
     height:40px;
     border-radius: 10px;
     margin-left: auto;
     margin-right: 0px;
     border: none;
+    font-size:20px;
+    /* font-weight:bold; */
 }
 
 #refresh > a{
@@ -58,19 +61,72 @@
     text-decoration:none;
 }
 
+#book_image{
+    transition: transform .2s;
+}
+
+#book_image:hover {
+    transform: scale(1.1);
+}
+.price{
+    transition: transform .2s;
+}
+.price:hover{
+    transform: scale(1.2);
+}
 .box{
     background-color:var(--grayback);
     border: 1px solid gray;
 }
-table{
+
+#title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* letter-spacing: 1px; */
+}
+
+#authortitle{
+    margin-top: 10px;
+    margin-left: 10px;
+    /* letter-spacing: 1px; */
+}
+
+#description{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size:18px;
+}
+
+table {
     width:100%;
+}
+
+table , th ,td{
+    border: 1px solid gray;
+    border-collapse: collapse;
+    height: 35px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding-left: 10px;
 }
 
 #description{
     line-height:1.5;
     margin-top: 10px;
 }
+.buynow{
+    width: 100px;
+    height:30px;
+    color:var(--white);
+    background-color:var(--buynow1);
+    border: none;
+    border-radius: 10px;
+}
 
-th{
+.box .buynow{
+    background-color:var(--buynow2)
+}
+
+th {
     text-align:left;
 }
