@@ -86,4 +86,38 @@
     import navbar from './components/navbar.js'
     let navbar_append=document.getElementById("nav_container")
     navbar_append.innerHTML=navbar()
+    let dat=document.getElementById("signinT")
+let dat2=document.getElementById("signupT")
+let dat3=document.getElementById("account_tab") 
+//added account tab that will appear only after SignIn
+// console.log(dat)
+ let user_name=JSON.parse(localStorage.getItem("users"))
+ if(user_name!=null){
+  // console.log(user_name)
+
+  dat.addEventListener("click",function(event){
+    event.preventDefault();
+    // window.location.href="./index.html"
+  })
+  dat.innerText=user_name.email
+  dat2.innerHTML="Log Out"
+  dat2.addEventListener("click",function(event){
+    event.preventDefault()
+    dat.innerText="Sign In"
+    dat2.innerText="Sign Up"
+    localStorage.setItem("users",null) 
+     localStorage.setItem("users",null) 
+    localStorage.setItem("users",null) 
+    window.location.href="./index.html"
+    
+    
+  })
+  dat3.classList.remove("account_tab")
+  dat3.addEventListener("click",function (event){
+    event.preventDefault()
+    window.location.href="./account.html"
+  })
+ }
+
+ 
 </script>

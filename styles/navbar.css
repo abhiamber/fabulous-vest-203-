@@ -7,6 +7,7 @@
 #navbar{
     display: flex;
     padding: 10px;
+    position: sticky;
     background-color: #2196F3;
     /* border: 2px solid red; */
     justify-content: space-around;
