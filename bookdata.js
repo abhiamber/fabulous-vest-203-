@@ -54,7 +54,7 @@ let description = "";
         
 //         document.getElementById("description").innerHTML ="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 //       }
-//     });
+//     });  
 // } catch (err) {
 //   console.log(err);
 // }
@@ -62,6 +62,7 @@ let description = "";
  
 
 document.getElementById("description").innerHTML ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore excepturi amet assumenda modi, culpa facilis, fugit ipsa eum iste id ipsam vero nam quas. Voluptatibus libero minus, aliquam numquam perspiciatis reiciendis rerum dolorem molestiae fugit sint corrupti quisquam est asperiores modi ex cupiditate doloribus commodi beatae deserunt mollitia praesentium cumque voluptatum? Voluptatibus aliquam iure quod similique delectus, autem nesciunt cupiditate dolores dolore! Velit quos est doloremque nesciunt. Enim non ullam saepe blanditiis facilis ea. Porro, nisi reprehenderit cumque, soluta officiis possimus ab harum eius nihil corporis eum facere quis ratione. Asperiores rem tempora facilis, eius accusamus, eligendi tenetur similique, quo ad assumenda possimus temporibus eaque sequi suscipit repellat optio ipsa. Quia accusantium, commodi accusamus quidem ipsa natus cumque dolores ut, sunt magnam officiis fugit molestiae modi nesciunt, perferendis corrupti eos tenetur animi. Corporis quae eveniet officia fugiat quibusdam repudiandae ipsa magni reprehenderit sed rerum inventore odio et enim voluptas repellat, eligendi labore? Odio, saepe porro corrupti minima asperiores voluptate quos esse excepturi vero consequuntur necessitatibus eligendi autem quas possimus ea quidem? Enim, ex quae, impedit inventore quia quam cumque atque suscipit officia et incidunt illum tenetur dolores architecto numquam blanditiis itaque aliquam. Aliquam obcaecati pariatur consequatur aspernatur officia! Earum ipsum accusantium, maxime harum incidunt similique iure vero deserunt! Perspiciatis modi voluptates impedit! Reprehenderit tempore praesentium assumenda nesciunt molestias nam quis, doloremque iure fuga, optio obcaecati iste. Impedit officiis architecto incidunt beatae totam cumque nam id sequi ratione commodi harum, et ea sed aliquam hic, quisquam vitae quos illo? Veniam, modi vitae dolorem temporibus magni illum esse quas, optio saepe delectus nostrum sint aperiam a eum exercitationem alias quod, facilis perspiciatis unde? Facere, quas numquam sit minus ratione blanditiis aperiam animi nostrum repudiandae rem atque similique dignissimos odio autem recusandae sapiente. Fuga, deleniti quas! Quam perspiciatis molestiae eius, repellat magni numquam.";
+// document.getElementById("description").innerHTML =description
 
 let price = document.querySelectorAll('.price');
 // console.log(price[0].innerHTML=);
