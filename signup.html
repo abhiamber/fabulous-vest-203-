@@ -142,7 +142,8 @@
         <h2>Let's set up your account</h2>
         <input type="text" placeholder="First Name (optional)" />
         <input type="text" id="email" placeholder="Email Address" />
-        <input type="password" id="password" placeholder="Password" />
+        <input type="password" id="password" autofocus class="form_input" placeholder="Password" />
+        <div class="form_input_err_message"></div>
         <button id="submit">Create My Account</button>
         <div>OR</div>
         <button id="facebook">Continue With Facebook</button>
@@ -195,6 +196,17 @@ window.location.href="https://www.facebook.com/"
   gooogle.addEventListener("click",function(){
     window.location.href="https://www.gmail.com/"
   })
+let errM=document.querySelectorAll(".form_input")
+errM.forEach(element => {
+  element.addEventListener("blur",e => {
+    if(e.target.id=="password" && e.target.value.length >0 && e.target.value.length< 10){
+      setinputError(element,"Password must be alteast 10 character in length");
+    }
+  })
+  element.addEventListener("input",e =>{
+    clearInputError(element);
+  });
+});
 </script>
 
 <!-- <script type="module">
