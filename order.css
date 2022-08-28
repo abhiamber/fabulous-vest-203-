@@ -1,0 +1,47 @@
+#heading{
+    text-align: center;
+    height:100px;
+    width:100%;
+    border:1px solid teal;
+    background-color:rgb(19, 75, 196)
+}
+#heading>h1{
+    color:yellow;
+    font-size: 40px;
+}
+.green{
+    color:green;
+}
+#container{
+    height:auto;
+    width:80%;
+    margin:auto;
+    margin-top:5%;
+    border:1px solid rgb(160, 156, 156);
+    border-radius: 10px;
+    display:flex;
+    gap:30px;
+}
+#main{
+    margin-left:3%;
+    width:70%;
+}
+#detail{
+    line-height: 50px;
+}
+.grey{
+    color:grey
+}
+#image>img{
+    height:300px;
+    width:250px;
+}
+#image{
+    padding: 5%;
+    height:300px;
+    width:25%;
+}
+#heading>h1>a{
+    text-decoration: none;
+    color:yellow;
+}

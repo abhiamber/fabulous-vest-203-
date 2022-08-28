@@ -22,8 +22,7 @@ function navbar(){
         <p><a href="./contact.html">Contact</a></p>
         <p><a href="./signin.html" id="signinT">Sign In</a></p>
         <p><a href="./signup.html" id="signupT">Sign Up</a></p>
-        <p><a href="./signup.html" id="account_tab" class="account_tab">Account</a></p>
-
+        <p><a href="carts.html" id="">Carts</a></p>
     </div>
 </div>
 

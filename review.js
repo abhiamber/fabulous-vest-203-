@@ -16,28 +16,52 @@ let h6= document.getElementById("total")
 let h7= document.getElementById("name")
 let h8= document.getElementById("address")
 let h9= document.getElementById("number")
+let h10=document.getElementById("author")
 let quantity=document.getElementById("quan").value; 
-
-let amount=399;
+let obj = JSON.parse(localStorage.getItem("bookData") || {});
+let amount=obj.price;
 let x=new Date();
 let month = months[x.getMonth()];
 let year=x.getFullYear();
-let date=x.getDate();
+let date=x.getDate()+2;
 h.innerText=d+date+" "+month+" "+year
 let img=document.getElementById("img");
-img.src="https://s26162.pcdn.co/wp-content/uploads/2019/11/A1NfEjobJnL-691x1024.jpg"
-h1.innerText="Most Influential Classics of All Time (Box Set of 4 Books)"
-h2.innerText="by Lao Tzu, Friedrich Nietzsche, James Allen, Kahlil Gibran"
-h3.innerText=q+amount;
+img.src=`https://covers.openlibrary.org/b/isbn/${obj.isbn[0]}-L.jpg`
+h1.innerText=obj.title;
+h2.innerText="Written by : "+obj.author_name
+h3.innerText=q+Math.floor(amount);
 h4.innerText=h3.innerText;
 
 function myfunc(){
     let quantity=document.getElementById("quan").value;       
     h5.innerText=y+quantity;
     let prod=amount*Number(quantity)
-    h6.innerText=t+prod
+    h6.innerText=t+Math.floor(prod);
+    return prod;
 }
 let shipmentDetail=JSON.parse(localStorage.getItem("shipment"));
 h7.innerText=n+shipmentDetail.name;
 h8.innerText=a+shipmentDetail.address;
 h9.innerText=p+shipmentDetail.number;
+let arr=JSON.parse(localStorage.getItem("cart"))||[];
+
+let productObj={
+    title:obj.title,
+    author:obj.author_name,
+    image:`https://covers.openlibrary.org/b/isbn/${obj.isbn[0]}-L.jpg`,
+    amount:obj.price,
+}
+arr.push(productObj)
+console.log(arr)
+
+localStorage.setItem("cart",JSON.stringify(arr))
+
+function myorder(){
+    if(h5.innerText==""){
+        alert ("please select quantity");
+        return;
+    }
+    else{
+        window.location.href="order.html"
+    }
+}

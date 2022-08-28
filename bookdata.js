@@ -73,6 +73,7 @@ for (let index = 0; index < price.length; index++) {
     
 }
 
+
 // console.log(price);
 
 let navbar_append = document.getElementById("nav_container");
