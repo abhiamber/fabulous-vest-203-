@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,136 +8,177 @@
     <title>Contact</title>
     <link rel="stylesheet" href="./styles/navbar.css">
     <style>
-        body{
-          background-image: url("https://th.bing.com/th/id/OIP.uMaRJVc0JTNlTNcO82LU0wHaEK?pid=ImgDet&rs=1");
-       background-repeat: no-repeat;
+        body {
+            background-repeat: no-repeat;
             background-attachment: fixed;
-           background-size: cover;
-      }
-       #container{
-           display: grid;
-           grid-template-columns: repeat(2,1fr);
-           gap:5px;
-           margin-top: 100px;
+            background-size: cover;
+        }
 
-       }
-       #container>div{
-           width: 600px;
-           margin: auto;
-       }
-       #container>div>input{
-           width:100%;
-           height:30px;
-           border-radius: 5px;
-           padding-right: 30px;
-       }
-       #container>div>p{
-           text-align: center;
-       }
-       #message{
+        #container {
+            background-image: url("https://ideakart.com/assets/youridea-23d18c0fab7feb4d66e4c1dbc419428c71b2014ff742fc52b4006f6b65af6b67.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            padding-bottom: 20px;
+            /* margin-top: 20px; */
+            /* margin-top: -1150px; */
+            /* margin-top: 100px; */
+
+        }
+
+        #container>div {
+            width: 600px;
+            margin: auto;
+        }
+
+        #container>div>input {
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            padding-right: 30px;
+        }
+
+        #container>div>p {
             text-align: center;
-       }
-       #message>input{
-           width: 80%;
-           padding-bottom: 100px;
-       }
-       h4{
-           text-align: center;
-           margin-top: 100px;
-           margin-bottom: -100px;
-       }
-       #button>button{
-           color: white;
-           background-color:green;
-           border: green;
-           border-radius: 10px;
-           height: 40px;
-           width: 100px;
-       }
-       #button{
-           text-align: center;
-           margin-top: 15px;
-       }
-       #getTo{
-    height: 300px;
-    width: 300px;
-    padding-left: 50px;   
-}
-div p {
-            color:blue;
-             
-         }
-         #getTo>a{
+        }
+
+        input{
+            border: none;
+            padding-left: 10px;
+        }
+
+        input:hover{
+            box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, black -6px -2px 16px 0px;
+
+        }
+
+        #message {
+            text-align: center;
+        }
+
+        #message>input {
+            width: 80%;
+            padding-bottom: 100px;
+        }
+
+        h4 {
+            text-align: center;
+            margin-top: 20px;
+            /* margin-top: 100px; */
+            /* margin-bottom: -100px; */
+        }
+
+        #button>button {
+            color: white;
+            background-color: green;
+            border: green;
+            border-radius: 10px;
+            height: 40px;
+            width: 100px;
+        }
+
+        #button {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        #getTo {
+            height: 300px;
+            width: 300px;
+            padding-left: 50px;
+        }
+
+        div p {
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        #getTo>a {
             display: grid;
         }
-   </style>
+    </style>
 </head>
+
 <body>
     <div id="nav_container"></div>
-    <h4>You can contact our team by filling this form</h4>
     <div id="container">
-        <div><p>Firstname *</p><input type="text" placeholder="Please enter your Firstname *"></div>
+        <h4>You can contact our team by filling this form</h4>
 
-        <div><p>Lastname *</p><input type="text" id="" placeholder="Please enter your Lastname"></div>
+        <div>
+            <p>Firstname *</p><input type="text" placeholder="Please enter your Firstname *">
+        </div>
 
-        <div><p>Email *</p><input type="text" placeholder="please Enter your email"> </div>
+        <div>
+            <p>Lastname *</p><input type="text" id="" placeholder="Please enter your Lastname">
+        </div>
 
-        <div><p>Phone *</p><input type="text" placeholder="please enter your phone"></div>
-    </div>
-    <div id="message">
-        <p>Message *</p>
-        <input type="text" placeholder="Message for me *">
-    </div>
-    <div id="button">
-    <button>Send Message</button>
-    <div id="getTo">
-        <h3>Get To Know Us</h3>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="search.html">Search</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="return.html">Refund Policy</a>
-        <a href="Earn.html">Earn Money Online</a>
-        <a href="#">QuickBuyer</a>
+        <div>
+            <p>Email *</p><input type="text" placeholder="please Enter your email">
+        </div>
+
+        <div>
+            <p>Phone *</p><input type="text" placeholder="please enter your phone">
+        </div>
+        <div id="message">
+            <p>Message *</p>
+            <input type="text" placeholder="Message for me *">
+        </div>
+        <div id="button">
+            <button>Send Message</button>
+        </div>
+</div>
+        <div id="getTo">
+            <h3>Get To Know Us</h3>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="search.html">Search</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="return.html">Refund Policy</a>
+            <a href="Earn.html">Earn Money Online</a>
+            <a href="#">QuickBuyer</a>
+
 </body>
+
 </html>
 <script type="module">
 
     import navbar from './components/navbar.js'
-    let navbar_append=document.getElementById("nav_container")
-    navbar_append.innerHTML=navbar()
-    let dat=document.getElementById("signinT")
-let dat2=document.getElementById("signupT")
-let dat3=document.getElementById("account_tab") 
-//added account tab that will appear only after SignIn
-// console.log(dat)
- let user_name=JSON.parse(localStorage.getItem("users"))
- if(user_name!=null){
-  // console.log(user_name)
+    let navbar_append = document.getElementById("nav_container")
+    navbar_append.innerHTML = navbar()
+    let dat = document.getElementById("signinT")
+    let dat2 = document.getElementById("signupT")
+    let dat3 = document.getElementById("account_tab")
+    //added account tab that will appear only after SignIn
+    // console.log(dat)
+    let user_name = JSON.parse(localStorage.getItem("users"))
+    if (user_name != null) {
+        // console.log(user_name)
 
-  dat.addEventListener("click",function(event){
-    event.preventDefault();
-    // window.location.href="./index.html"
-  })
-  dat.innerText=user_name.email
-  dat2.innerHTML="Log Out"
-  dat2.addEventListener("click",function(event){
-    event.preventDefault()
-    dat.innerText="Sign In"
-    dat2.innerText="Sign Up"
-    localStorage.setItem("users",null) 
-     localStorage.setItem("users",null) 
-    localStorage.setItem("users",null) 
-    window.location.href="./index.html"
-    
-    
-  })
-  dat3.classList.remove("account_tab")
-  dat3.addEventListener("click",function (event){
-    event.preventDefault()
-    window.location.href="./account.html"
-  })
- }
+        dat.addEventListener("click", function (event) {
+            event.preventDefault();
+            // window.location.href="./index.html"
+        })
+        dat.innerText = user_name.email
+        dat2.innerHTML = "Log Out"
+        dat2.addEventListener("click", function (event) {
+            event.preventDefault()
+            dat.innerText = "Sign In"
+            dat2.innerText = "Sign Up"
+            localStorage.setItem("users", null)
+            localStorage.setItem("users", null)
+            localStorage.setItem("users", null)
+            window.location.href = "./index.html"
 
- 
+
+        })
+        dat3.classList.remove("account_tab")
+        dat3.addEventListener("click", function (event) {
+            event.preventDefault()
+            window.location.href = "./account.html"
+        })
+    }
+
+
 </script>
