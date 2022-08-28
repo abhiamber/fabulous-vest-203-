@@ -1,5 +1,5 @@
 #container{
-    height:500px;
+    height:auto;
     width:70%;
     border:1px solid rgb(160, 156, 156);
     border-radius: 5px;
@@ -19,7 +19,7 @@ hr{
 #cont{
     text-align: center;
     height:400px;
-    width:25%;
+    width:auto;
     border:1px solid rgb(160, 156, 156);
     border-radius: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -68,4 +68,18 @@ a{
 }
 #cont>input{
     margin-bottom:5%;
+}
+@media all and (min-width: 180px) and (max-width: 480px) {
+    #box{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:40px;
+    }
+}
+@media all and (min-width: 480px) and (max-width: 780px){
+    #box{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:40px;
+    }
 }

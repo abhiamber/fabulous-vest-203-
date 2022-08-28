@@ -30,3 +30,18 @@
 #container>div>p{
     padding:10px;
 }
+
+@media all and (min-width: 180px) and (max-width: 480px) {
+    #container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:40px;
+    }
+}
+@media all and (min-width: 480px) and (max-width: 780px){
+    #container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:40px;
+    }
+}
