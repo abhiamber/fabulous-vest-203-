@@ -2,9 +2,6 @@
 
 ## Ideakart is a site that gives you an idea about the book you want to buy. We offer a huge collection of books in diverse categories.We have a user friendly search engine and a quick delivery system. With this we even provide best discounts on our books. You can write to us for any idea or any help you need.
 
-[Deploy link](https://playful-hummingbird-6d8d46.netlify.app).
-
-
 ## Tech Stack:
   <p>- Javascript</p>
   <p>- HTML</p>
@@ -28,13 +25,10 @@ This is a simple project. You can open this project using the above deployed lin
 ![Landing home img](https://i.postimg.cc/bN0yLgLP/Screenshot-1075.png)
 
 2.This is Sign-up & Log-in Page
- ![SignUp Page-Page](https://i.ibb.co/sFLjT5V/Screenshot-1071.png)
+ ![SignUp Page-Page](https://i.ibb.co/sFLjT5V/Screenshot-214.png)
  ![Login Page-Page](https://i.ibb.co/sPLgSf6/Screenshot-1072.png)
  
 
- 3. This is the Cart page
-![ Cart page-Page](https://i.ibb.co/84Npr0w/Screenshot-1073.png)
-
 # Deployed website:
-[click here](https://playful-hummingbird-6d8d46.netlify.app/)
+[click here](fabulous-vest-203.vercel.app/)
 
