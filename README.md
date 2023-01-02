@@ -24,10 +24,7 @@ This is a simple project. You can open this project using the above deployed lin
 1. This is the Landing page
 ![Landing home img](https://i.postimg.cc/bN0yLgLP/Screenshot-1075.png)
 
-2.This is Sign-up & Log-in Page
- ![SignUp Page-Page](https://i.ibb.co/sFLjT5V/Screenshot-214.png)
- ![Login Page-Page](https://i.ibb.co/sPLgSf6/Screenshot-1072.png)
- 
+
 
 # Deployed website:
 [click here](fabulous-vest-203.vercel.app/)
